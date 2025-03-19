@@ -116,6 +116,7 @@
                             container.innerHTML += footerBtn;
                             container.querySelectorAll(".data-loader").forEach(el => el.remove());
                             // jQuery(".data-loader").remove();
+                            removeRenderTemplate(container);
                         })
                         .catch(error => {
                             console.error('Error fetching data:', error);
@@ -555,6 +556,7 @@ function closePopup(popupTarget = "popup") {
     document.getElementById(`${popupTarget}`).style.display = "none";
 }
 
-function removeRenderTemplate(){
-    jQuery('script[type="text/template"]').remove();
+function removeRenderTemplate(container){
+    // jQuery('script[type="text/template"]').remove();
+    container.querySelectorAll('script[type="text/template"]').forEach(script => script.remove());
 }

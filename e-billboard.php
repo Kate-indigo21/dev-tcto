@@ -24,6 +24,12 @@
         a {
             color: #fff;
         }
+        .data-loader img {
+            display: block;
+            margin: auto;
+            text-align: center;
+            width: 70px;
+        }
         .container {
             display: flex;
             width: 100%;
