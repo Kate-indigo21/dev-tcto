@@ -4,7 +4,7 @@
     let FETCH_DATA      = [];
     let DATA_COUNT      = 100;
     const LOADER_HTML   = `<div class="data-loader">
-                                <img src="https://dev-tcto.etpbx.com/sharepoint-integration/msutcto-loader.gif">
+                                <img src="https://dev-msutawi-tawi.indigo21.com/sharepoint-integration/msutcto-loader.gif">
                             </div>`;
     
 
