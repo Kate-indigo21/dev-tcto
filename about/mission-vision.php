@@ -1,0 +1,18 @@
+﻿<?php include("../includes/header.php") ?>
+<div id="mv" class="bg-white-pure flex flex-col items-center text-center pb-[71px]">
+	<h3 class="headings xl:h3 xs:h4 xs:max-w-[353px] text-msu-maroon xl:max-w-[720px] mt-20">The same vision
+		with a better mission</h3>
+	<h4 class="headings h4 text-msu-rusty-red max-w-[720px] mt-20">VISION</h4>
+	<p class="paragraph p1 text-black-pure xl:max-w-[720px] xs:max-w-[325px] mt-10">A university in the Sulu
+		Archipelago renowned for Fisheries, Marine and Environmental Science and other disciplines.</p>
+	<h4 class="headings h4 text-msu-rusty-red max-w-[720px] mt-20">MISSION</h4>
+	<p class="paragraph p1 text-black-pure xl:max-w-[720px] xs:max-w-[325px] mt-10">
+		To fulfill its mandate, MSU-TCTO shall:<br><br>
+		a) Provide relevant quality education especially to Muslims and other indigenous groups;<br><br>
+		b) Promote environmental conservation and sustainable utilization of fisheries and marine
+		resources;<br><br>
+		c) Develop and transfer new knowledge and innovative technology to the community; and<br><br>
+		d) Engage stakeholders in peace and socio-economic development endeavors.
+	</p>
+</div>
+<?php include("../includes/footer.php") ?>
