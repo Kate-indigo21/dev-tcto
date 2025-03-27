@@ -3,6 +3,7 @@
     const containers    = document.querySelectorAll(".content-container");
     let FETCH_DATA      = [];
     let DATA_COUNT      = 100;
+    const SHAREPOINT_SITE    = "Tawitawi";
     const LOADER_HTML   = `<div class="data-loader">
                                 <img src="https://dev-msutawi-tawi.indigo21.com/sharepoint-integration/msutcto-loader.gif">
                             </div>`;
@@ -10,6 +11,7 @@
 
     // INITIAL RELOAD
     containers.forEach((container) => {
+        const sharepointSite    = container.getAttribute("data-sharepoint-site") || SHAREPOINT_SITE
         const listName      = container.getAttribute("data-sharepoint-list");
         const row           = container.getAttribute("data-row");
         const hasFilter     = container.getAttribute("data-filter-values") == "true"; 
@@ -49,7 +51,7 @@
         
             try {
                 
-                await fetchData(listName,filter_columns,limit,orderBy);
+                await fetchData(sharepointSite, listName,filter_columns,limit,orderBy);
 
                 const items     = FETCH_DATA[listName];
                 hasData         = items.length > 0;
@@ -164,7 +166,6 @@
     }
 
     async function checkFileExists(fileName) {
-        // const imageFile = `https://msugensan.eacomm.com/wp-content/uploads/faculty-and-staff/${fileName}`;
         const imageFile = `./faculty-and-staff/${fileName}`;
         try {
             const response = await fetch(imageFile, { method: 'HEAD' });
@@ -251,7 +252,7 @@
 
     }
 
-    async function fetchData(listName, filter_columns = "", count = "", orderBy = ""){
+    async function fetchData(sharepointSite, listName, filter_columns = "", count = "", orderBy = ""){
         let queryParams = {
                             select: "",
                             filter: "",
@@ -319,7 +320,7 @@
         const tctoParams = {
                 tenantName: "TCTO",
                 baseUrl:
-                    `https://msutawitawiedu.sharepoint.com/sites/Tawitawi/_api/web/lists/GetByTitle('${listName}')/items`,
+                    `https://msutawitawiedu.sharepoint.com/sites/${sharepointSite}/_api/web/lists/GetByTitle('${listName}')/items`,
                 queryParams
             }
         const response = await fetch('https://api-msu.etpbx.com/api/getData', {
@@ -373,6 +374,7 @@
     async function getFilteredData(thisData, fromLoadMore = false){
        
         let thisElement     = thisData.closest(".content-container");
+        let sharepointSite  = thisElement.attr("data-sharepoint-site") || SHAREPOINT_SITE
         
         let searchKeyword   = thisElement.find(".search-keyword").val() || null;
         let listName        = thisElement.attr("data-sharepoint-list");

@@ -651,5 +651,7 @@
         </main>
 		<script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<script src="<?php echo $base_url; ?>sharepoint-integration/sharepoint-script.js"></script>
+        <script src="https://insights.elishatelecom.com/aichat/public/snippet_assets/js/include-chatbot.min.js"></script>
+        <div include-html="https://insights.elishatelecom.com/aichat/embedded-chatbot?key=guXJzVN2UnYvtbBf70C3GKEpDF5wZ9ad" id="chatbot"></div>
     </body>
 </html>
