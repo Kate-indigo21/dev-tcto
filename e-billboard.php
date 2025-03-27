@@ -241,7 +241,7 @@
             setTimeout(() => {
 
                 jQuery('script.slick-slide').remove();
-            }, 10000);
+            }, 5000);
 
         });
     </script>
