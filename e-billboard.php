@@ -21,15 +21,18 @@
             background-color: #0a1c37;
             overflow: hidden;
         }
+
         a {
             color: #fff;
         }
+
         .data-loader img {
             display: block;
             margin: auto;
             text-align: center;
             width: 70px;
         }
+
         .container {
             display: flex;
             width: 100%;
@@ -86,11 +89,13 @@
             text-overflow: ellipsis;
             width: 100%;
         }
+
         /* NEWS */
         .news-container {
             width: 100%;
             height: 30vh;
         }
+
         .news-container h1 {
             background: #800000;
             text-align: center;
@@ -99,12 +104,14 @@
             margin-bottom: 0px;
             padding: 5px;
         }
+
         #news-billboard {
             display: flex;
             gap: 20px;
             overflow: hidden;
             position: relative;
         }
+
         .news-content {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
@@ -112,11 +119,13 @@
             animation: moveNewsHorizontal 30s linear infinite;
             min-width: 800px;
         }
+
         .news-content-text h2 {
             font-size: 23px;
             font-weight: bold;
             color: #fff;
         }
+
         .news-content-text p {
             font-size: 16px;
             font-weight: bold;
@@ -200,39 +209,40 @@
     <script src="<?php echo $base_url; ?>sharepoint-integration/sharepoint-script.js"></script>
     <script>
         jQuery(document).ready(function ($) {
-            
+
+            function initializeSlickSlider() {
+                $('.slider').slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    arrows: false,
+                    dots: false,
+                    adaptiveHeight: true
+                });
+            }
+
+            // Wait for SharePoint content to be loaded before initializing the slider
+            var checkExist = setInterval(function () {
+                if ($('.slider .events-content').length) {
+                    clearInterval(checkExist);
+                    initializeSlickSlider();
+                }
+            }, 500);
+
+            var checkExist = setInterval(function () {
+                if ($('.slider .events-content').length) {
+                    clearInterval(checkExist);
+                    console.log("SharePoint content detected, initializing Slick...");
+                    initializeSlickSlider();
+                }
+            }, 500);
 
             setTimeout(() => {
-                function initializeSlickSlider() {
-                        $('.slider').slick({
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            autoplay: true,
-                            autoplaySpeed: 2000,
-                            arrows: false,
-                            dots: false,
-                            adaptiveHeight: true
-                        });
-                    }
 
-                    // Wait for SharePoint content to be loaded before initializing the slider
-                    var checkExist = setInterval(function () {
-                        if ($('.slider .events-content').length) {
-                            clearInterval(checkExist);
-                            initializeSlickSlider();
-                        }
-                    }, 500);
-
-                    var checkExist = setInterval(function () {
-                        if ($('.slider .events-content').length) {
-                            clearInterval(checkExist);
-                            console.log("SharePoint content detected, initializing Slick...");
-                            initializeSlickSlider();
-                        }
-                    }, 500); 
-                    jQuery('script.slick-slide').remove();
+                jQuery('script.slick-slide').remove();
             }, 10000);
-            
+
         });
     </script>
 </body>
