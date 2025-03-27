@@ -200,33 +200,37 @@
     <script src="<?php echo $base_url; ?>sharepoint-integration/sharepoint-script.js"></script>
     <script>
         jQuery(document).ready(function ($) {
-            function initializeSlickSlider() {
-                $('.slider').slick({
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    autoplaySpeed: 2000,
-                    arrows: false,
-                    dots: false,
-                    adaptiveHeight: true
-                });
-            }
+            
 
-            // Wait for SharePoint content to be loaded before initializing the slider
-            var checkExist = setInterval(function () {
-                if ($('.slider .events-content').length) {
-                    clearInterval(checkExist);
-                    initializeSlickSlider();
-                }
-            }, 500);
+            setTimeout(() => {
+                function initializeSlickSlider() {
+                        $('.slider').slick({
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            autoplay: true,
+                            autoplaySpeed: 2000,
+                            arrows: false,
+                            dots: false,
+                            adaptiveHeight: true
+                        });
+                    }
 
-            var checkExist = setInterval(function () {
-                if ($('.slider .events-content').length) {
-                    clearInterval(checkExist);
-                    console.log("SharePoint content detected, initializing Slick...");
-                    initializeSlickSlider();
-                }
-            }, 500);
+                    // Wait for SharePoint content to be loaded before initializing the slider
+                    var checkExist = setInterval(function () {
+                        if ($('.slider .events-content').length) {
+                            clearInterval(checkExist);
+                            initializeSlickSlider();
+                        }
+                    }, 500);
+
+                    var checkExist = setInterval(function () {
+                        if ($('.slider .events-content').length) {
+                            clearInterval(checkExist);
+                            console.log("SharePoint content detected, initializing Slick...");
+                            initializeSlickSlider();
+                        }
+                    }, 500); 
+            }, 100000);
         });
     </script>
 </body>
