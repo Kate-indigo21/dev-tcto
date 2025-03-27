@@ -230,7 +230,7 @@
                             initializeSlickSlider();
                         }
                     }, 500); 
-            }, 5000);
+            }, 10000);
         });
     </script>
 </body>
