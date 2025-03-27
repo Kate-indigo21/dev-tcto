@@ -196,8 +196,8 @@
         </div>
     </div>
     <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="<?php echo $base_url; ?>sharepoint-integration/sharepoint-script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+    <script src="<?php echo $base_url; ?>sharepoint-integration/sharepoint-script.js"></script>
     <script>
         jQuery(document).ready(function ($) {
             function initializeSlickSlider() {
