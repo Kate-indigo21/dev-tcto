@@ -230,7 +230,9 @@
                             initializeSlickSlider();
                         }
                     }, 500); 
+                    jQuery('script.slick-slide').remove();
             }, 10000);
+            
         });
     </script>
 </body>
