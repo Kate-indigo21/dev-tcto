@@ -561,4 +561,5 @@ function closePopup(popupTarget = "popup") {
 function removeRenderTemplate(container){
     // jQuery('script[type="text/template"]').remove();
     container.querySelectorAll('script[type="text/template"]').forEach(script => script.remove());
+    $('script.slick-slide').remove();
 }
