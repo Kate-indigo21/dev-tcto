@@ -72,7 +72,7 @@
                     if(hasFilter){
                         // FETCH THE DEPARTMENT AND COLLEGE LIST
                             // await fetchData("Department");
-                        await fetchData("College");
+                        await fetchData(sharepointSite, "College");
                         // filterDiv    = filteringSection(items,filterColumn);
                         filterDiv       = filteringSection();
                     }  
