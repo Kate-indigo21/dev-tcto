@@ -416,7 +416,7 @@
         try{
 
             
-            await fetchData(listName, filter, DATA_COUNT);
+            await fetchData(sharepointSite, listName, filter, DATA_COUNT);
             
 
             const data          = FETCH_DATA[listName];
