@@ -115,8 +115,7 @@
 
             #news-popup .popup-text {
                 font-family: Merchant;
-                font-size: 25px;
-                font-weight: bold;
+                font-size: 18px;
                 margin-bottom: 15px;
                 color: #000;
             }
@@ -136,6 +135,10 @@
                 background:  #0c1c59;
                 color: #fff;
                 padding: 10px 15px;
+                margin-top: 10px;
+            }
+            #news-popup .popup-text p {
+                margin-top: 10px;
             }
             .popup {
                 display: none;
