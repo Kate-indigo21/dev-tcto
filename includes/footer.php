@@ -4,7 +4,7 @@
         <div
             class="flex xl:flex-row xs:flex-col justify-center xl:px-[240px] xs:px-[15px] xl:mb-[140px] xs:mb-[58px] xl:gap-[40px] xs:gap-[10px]">
             <!-- NEWS SHAREPOINT LIST -->
-            <div class="content-container" id="news-container" data-sharepoint-list="News" data-list-count="1"
+            <div class="content-container" id="news-container" data-sharepoint-list="News" data-list-count="3"
                 data-limit="3" data-sort="Created:desc">
                 <script type="text/template" class="content-template">
                                 <!-- Place your HTML code here -->

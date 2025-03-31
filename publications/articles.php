@@ -20,7 +20,7 @@
 </div>
 <div class="flex justify-center xl:mx-[240px] xs:mx-5 mt-[120px]">
     <!-- NEWS SHAREPOINT LIST -->
-    <div class="content-container" id="news-page" data-sharepoint-list="News" data-list-count="1"
+    <div class="content-container" id="news-page" data-sharepoint-list="News" data-list-count="2"
         data-sort="Created:desc">
         <script type="text/template" class="content-template">
         <!-- Place your HTML code here -->
