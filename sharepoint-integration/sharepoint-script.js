@@ -83,6 +83,8 @@
                         // dataLimit   = parseFloat(limit) + 1;
                         dataLimit   = parseFloat(limit) <= 2 ? parseFloat(limit) : parseFloat(limit) + 1;
                         startFrom   = parseFloat(startFrom) - 1
+                    }else if(limit){
+                        dataLimit = parseFloat(limit)
                     }
                     
                     for (const item of items.slice(startFrom, dataLimit)) {

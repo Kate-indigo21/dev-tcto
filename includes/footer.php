@@ -1,11 +1,20 @@
+<?php
+$url_parts = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
+$current_url = '';
+if (isset($url_parts[2])) {
+    $current_url = $url_parts[2]; // Output: admin.php
+}
+?>
 <!-- FooterNaV -->
 <div class="bg-msu-deep-ocean text-white-pure">
     <div class="mb-[60px] xl:mt-[80px] xs:mt-[40px]">
-        <div
+
+        <?php if($current_url !== 'articles.php'):?>
+            <div
             class="flex xl:flex-row xs:flex-col justify-center xl:px-[240px] xs:px-[15px] xl:mb-[140px] xs:mb-[58px] xl:gap-[40px] xs:gap-[10px]">
             <!-- NEWS SHAREPOINT LIST -->
-            <div class="content-container" id="news-container" data-sharepoint-list="News" data-list-count="3"
-                data-limit="4" data-sort="Created:desc">
+            <div class="content-container" id="news-container" data-sharepoint-list="News" data-sort="Created:desc"
+                data-limit="3">
                 <script type="text/template" class="content-template">
                                 <!-- Place your HTML code here -->
                 <div class="news-content">
@@ -19,159 +28,163 @@
                 </div>
                 </script>
             </div>
-        </div>
-        <div id="news-popup" class="popup">
-            <div class="popup-content">
-                <span class="close-btn" onclick="closePopup('news-popup')">&times;</span>
-                <script type="text/template" class="popup-template">
-                        <div class="popup-image">
-                            <img src="{{ ImageURL.Url }}">
-                        </div>
-                        <div class="popup-text">
-                            <h1>{{ Title }}</h1>
-                            <p>{{ BodyText }}</p>
-                        </div>
-                    </script>
-                <div class="popup-main-content"></div>
             </div>
-        </div>
-        <style>
-            #news-container {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 16px;
-            }
-
-            .news-content {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-
-            .news-image img {
-                width: 200px;
-                height: 200px;
-                object-fit: cover;
-            }
-
-            .news-content-text h1 {
-                font-size: 26px;
-                line-height: normal;
-                display: -webkit-box;
-                -webkit-line-clamp: 3;
-                /* Limit to 3 lines */
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                width: 100%;
-                cursor: pointer;
-            }
-
-            .news-content-text p {
-                font-size: 16px;
-                color: #999999;
-                line-height: normal;
-                display: -webkit-box;
-                -webkit-line-clamp: 5;
-                /* Limit to 3 lines */
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                width: 100%;
-            }
-
-            @media (max-width: 992px) {
+            <div id="news-popup" class="popup">
+                <div class="popup-content">
+                    <span class="close-btn" onclick="closePopup('news-popup')">&times;</span>
+                    <script type="text/template" class="popup-template">
+                            <div class="popup-image">
+                                <img src="{{ ImageURL.Url }}">
+                            </div>
+                            <div class="popup-text">
+                                <h1>{{ Title }}</h1>
+                                <p>{{ BodyText }}</p>
+                            </div>
+                        </script>
+                    <div class="popup-main-content"></div>
+                </div>
+            </div>
+            <style>
                 #news-container {
-                    grid-template-columns: repeat(1, 1fr);
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 16px;
                 }
 
                 .news-content {
+                    display: grid;
                     grid-template-columns: repeat(2, 1fr);
+                    gap: 10px;
                 }
 
                 .news-image img {
-                    margin: auto;
+                    width: 200px;
+                    height: 200px;
+                    object-fit: cover;
                 }
-            }
 
-            /* POPUP */
-            #news-popup .popup-content {
-                background: #fff;
-                padding: 0px 30px 25px 30px;
-                text-align: left;
-                width: 800px;
-                max-height: 80vh;
-                overflow-y: auto;
-                border-radius: 10px;
-            }
+                .news-content-text h1 {
+                    font-size: 26px;
+                    line-height: normal;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    /* Limit to 3 lines */
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    width: 100%;
+                    cursor: pointer;
+                }
 
-            #news-popup .popup-image img {
-                width: 100%;
-                height: 400px;
-                object-fit: cover;
-                object-position: center;
-                margin-bottom: 20px;
-            }
+                .news-content-text p {
+                    font-size: 16px;
+                    color: #999999;
+                    line-height: normal;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 5;
+                    /* Limit to 3 lines */
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    width: 100%;
+                }
 
-            #news-popup .popup-text {
-                font-family: Merchant;
-                font-size: 18px;
-                margin-bottom: 15px;
-                color: #000;
-            }
+                @media (max-width: 992px) {
+                    #news-container {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
 
-            #news-popup .popup-text h1 {
-                font-family: Merchant;
-                font-size: 25px;
-                font-weight: bold;
-                color: #0c1c59;
-                margin-bottom: 15px;
-            }
-            #news-popup .popup-text a {
-                font-family: Merchant;
-                font-size: 18px;
-                font-weight: bold;
-                margin-bottom: 15px;
-                background:  #0c1c59;
-                color: #fff;
-                padding: 10px 15px;
-                margin-top: 10px;
-            }
-            #news-popup .popup-text p {
-                margin-top: 10px;
-            }
-            .popup {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.9);
-                justify-content: center;
-                align-items: center;
-                z-index: 9999;
-            }
+                    .news-content {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
 
-            .popup-content {
-                text-align: left;
-                width: 800px;
-                max-height: 95vh;
-                overflow-y: auto;
-            }
+                    .news-image img {
+                        margin: auto;
+                    }
+                }
 
-            .close-btn {
-                position: relative;
-                cursor: pointer;
-                font-size: 24px;
-                right: 10px;
-                text-align: left;
-                display: flex;
-                align-items: end;
-                justify-content: end;
-                color: #000;
-            }
-        </style>
+                /* POPUP */
+                #news-popup .popup-content {
+                    background: #fff;
+                    padding: 0px 30px 25px 30px;
+                    text-align: left;
+                    width: 800px;
+                    max-height: 80vh;
+                    overflow-y: auto;
+                    border-radius: 10px;
+                }
+
+                #news-popup .popup-image img {
+                    width: 100%;
+                    height: 400px;
+                    object-fit: cover;
+                    object-position: center;
+                    margin-bottom: 20px;
+                }
+
+                #news-popup .popup-text {
+                    font-family: Merchant;
+                    font-size: 18px;
+                    margin-bottom: 15px;
+                    color: #000;
+                }
+
+                #news-popup .popup-text h1 {
+                    font-family: Merchant;
+                    font-size: 25px;
+                    font-weight: bold;
+                    color: #0c1c59;
+                    margin-bottom: 15px;
+                }
+
+                #news-popup .popup-text a {
+                    font-family: Merchant;
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-bottom: 15px;
+                    background: #0c1c59;
+                    color: #fff;
+                    padding: 10px 15px;
+                    margin-top: 10px;
+                }
+
+                #news-popup .popup-text p {
+                    margin-top: 10px;
+                }
+
+                .popup {
+                    display: none;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.9);
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 9999;
+                }
+
+                .popup-content {
+                    text-align: left;
+                    width: 800px;
+                    max-height: 95vh;
+                    overflow-y: auto;
+                }
+
+                .close-btn {
+                    position: relative;
+                    cursor: pointer;
+                    font-size: 24px;
+                    right: 10px;
+                    text-align: left;
+                    display: flex;
+                    align-items: end;
+                    justify-content: end;
+                    color: #000;
+                }
+            </style>
+        <?php endif;?>
         <!-- <div
                         class="flex xl:flex-row xs:flex-col justify-center xl:px-[240px] xs:px-[15px] xl:mb-[140px] xs:mb-[58px] xl:gap-[40px] xs:gap-[10px]"
                     >

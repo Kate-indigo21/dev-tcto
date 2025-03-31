@@ -2,7 +2,7 @@
 <div class="flex flex-col xl:mx-[240px] xs:mx-[20px] xl:mt-20">
     <h3 class="headings xl:h3 xs:h5 text-center">Articles</h3>
     <!-- NEWS SHAREPOINT LIST -->
-    <div class="content-container" id="news-headline-page" data-sharepoint-list="News" data-list-count="1"
+    <div class="content-container" id="news-headline-page" data-sharepoint-list="News" data-sort="Created:desc"
         data-limit="1" data-sort="Created:desc">
         <script type="text/template" class="content-template">
                                 <!-- Place your HTML code here -->
@@ -20,7 +20,7 @@
 </div>
 <div class="flex justify-center xl:mx-[240px] xs:mx-5 mt-[120px]">
     <!-- NEWS SHAREPOINT LIST -->
-    <div class="content-container" id="news-page" data-sharepoint-list="News" data-list-count="2"
+    <div class="content-container" id="news-page" data-sharepoint-list="News" data-list-count="1"
         data-sort="Created:desc">
         <script type="text/template" class="content-template">
         <!-- Place your HTML code here -->

@@ -1,4 +1,4 @@
-<?php $base_url = 'https://dev-tcto.etpbx.com/'; ?>
+<?php $base_url = 'http://localhost/dev-tcto/'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
