@@ -562,7 +562,7 @@ function closePopup(popupTarget = "popup") {
 
 function removeRenderTemplate(container){
     jQuery('script[type="text/template"]').remove();
-    // container.querySelectorAll('script[type="text/template"]').forEach(script => script.remove());
+    container.querySelectorAll('script[type="text/template"]').forEach(script => script.remove());
     let sharepointList = container.closest(".content-container").attr("data-sharepoint-list");
     sharepointList == "News" && container.querySelectorAll('script[type="text/template"]').forEach(script => script.remove());
 }
