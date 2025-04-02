@@ -238,10 +238,10 @@
                 }
             }, 500);
 
-            // setTimeout(() => {
+            setTimeout(() => {
 
-            //     jQuery('script.slick-slide').remove();
-            // }, 5000);
+                jQuery('script.slick-slide').remove();
+            }, 5000);
 
         });
     </script>
