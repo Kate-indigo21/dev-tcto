@@ -12,6 +12,7 @@
     // INITIAL RELOAD
     containers.forEach((container) => {
         const sharepointSite    = container.getAttribute("data-sharepoint-site") || SHAREPOINT_SITE
+        const hasSlider = container.classList.contains("slider")
         const listName      = container.getAttribute("data-sharepoint-list");
         const row           = container.getAttribute("data-row");
         const hasFilter     = container.getAttribute("data-filter-values") == "true"; 
@@ -120,7 +121,7 @@
                             container.innerHTML += footerBtn;
                             container.querySelectorAll(".data-loader").forEach(el => el.remove());
                             // jQuery(".data-loader").remove();
-                            removeRenderTemplate(container);
+                            hasSlider && removeRenderTemplate(container);
                         })
                         .catch(error => {
                             console.error('Error fetching data:', error);
@@ -561,8 +562,9 @@ function closePopup(popupTarget = "popup") {
 }
 
 function removeRenderTemplate(container){
-    jQuery('script[type="text/template"]').remove();
-    container.querySelectorAll('script[type="text/template"]').forEach(script => script.remove());
-    let sharepointList = container.closest(".content-container").attr("data-sharepoint-list");
-    sharepointList == "News" && container.querySelectorAll('script[type="text/template"]').forEach(script => script.remove());
+    container.find('script[type="text/template"]').remove();
+    // jQuery('script[type="text/template"]').remove();
+    // container.querySelectorAll('script[type="text/template"]').forEach(script => script.remove());
+    // let sharepointList = container.closest(".content-container").attr("data-sharepoint-list");
+    // sharepointList == "News" && container.querySelectorAll('script[type="text/template"]').forEach(script => script.remove());
 }
