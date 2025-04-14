@@ -61,12 +61,14 @@
             #facultystaff .grid-item:hover h2 {
                 color: #0c1c59;
             }
+
             .faculty-content {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 gap: 16px;
                 padding: 25px;
             }
+
             .faculty-content .image-container {
                 border-radius: 100%;
                 border: 5px solid #0c1c59;
@@ -74,6 +76,7 @@
                 height: 150px;
                 object-fit: cover;
             }
+
             .faculty-content .image-container img {
                 object-fit: cover;
                 border-radius: 100%;
@@ -106,6 +109,7 @@
                 .faculty-content {
                     text-align: center;
                 }
+
                 .faculty-content {
                     display: grid;
                     grid-template-columns: repeat(1, 1fr);
@@ -115,7 +119,7 @@
             }
 
             /* POPUP */
-            .popup {
+            #faculty-popup {
                 display: none;
                 position: fixed;
                 top: 0;
@@ -128,7 +132,7 @@
                 z-index: 9999;
             }
 
-            .popup-content {
+            #faculty-popup .popup-content {
                 background: #fff;
                 padding: 0px 30px 25px 30px;
                 text-align: left;
@@ -138,37 +142,37 @@
                 border-radius: 10px;
             }
 
-            .popup-main-content {
+            #faculty-popup .popup-main-content {
                 display: grid;
                 grid-template-columns: repeat(1, 1fr);
                 gap: 15px;
             }
 
-            .popup-image img {
+            #faculty-popup .popup-image img {
                 display: block;
                 border-radius: 100%;
                 border: 5px solid #0c1c59;
                 width: 200px;
                 height: 200px;
                 margin: auto;
-    
+
             }
 
-            .popup-text {
+            #faculty-popup .popup-text {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                text-align:center;
+                text-align: center;
             }
 
-            .popup-text h1 {
+            #faculty-popup .popup-text h1 {
                 font-size: 25px;
                 font-weight: bold;
                 color: #0c1c59;
             }
 
-            .close-btn {
+            #faculty-popup .close-btn {
                 position: relative;
                 right: 10px;
                 cursor: pointer;
