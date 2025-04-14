@@ -5,6 +5,8 @@ if (isset($url_parts[2])) {
     $current_url = $url_parts[2]; // Output: admin.php
 } elseif (isset($url_parts[1])) {
     $current_url = $url_parts[1];
+} elseif (isset($url_parts[0])) {
+    $current_url = $url_parts[0];
 }
 ?>
 <!-- FooterNaV -->
