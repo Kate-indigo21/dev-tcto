@@ -239,8 +239,11 @@
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
+                    tenantName: "TCTO",
+                    folderName: "FacultyDataImagesTcto",
                     id: mapId, 
-                    imagePath: "/sites/Tawitawi/Shared Documents/FacultyDataImagesTcto/",
+                    imagePath: `/sites/${SHAREPOINT_SITE}/Shared Documents/FacultyDataImagesTcto/`,
+                    baseUrl: `https://msugensan2.sharepoint.com/sites/${SHAREPOINT_SITE}/`
                 }),
             });
     
