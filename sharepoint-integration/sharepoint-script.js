@@ -243,7 +243,7 @@
                     folderName: "FacultyDataImagesTcto",
                     id: mapId, 
                     imagePath: `/sites/${SHAREPOINT_SITE}/Shared Documents/FacultyDataImagesTcto/`,
-                    baseUrl: `https://msugensan2.sharepoint.com/sites/${SHAREPOINT_SITE}/`
+                    baseUrl: `https://msutawitawiedu.sharepoint.com/sites/${SHAREPOINT_SITE}/`
                 }),
             });
     
