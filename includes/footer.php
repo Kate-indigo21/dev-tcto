@@ -3,13 +3,15 @@ $url_parts = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
 $current_url = '';
 if (isset($url_parts[2])) {
     $current_url = $url_parts[2]; // Output: admin.php
+} elseif (isset($url_parts[1])) {
+    $current_url = $url_parts[1];
 }
 ?>
 <!-- FooterNaV -->
 <div class="bg-msu-deep-ocean text-white-pure">
     <div class="mb-[60px] xl:mt-[80px] xs:mt-[40px]">
 
-        <?php if($current_url !== 'articles.php'):?>
+        <?php if($current_url !== 'articles.php' && $current_url !== 'news.php'):?>
             <div
             class="flex xl:flex-row xs:flex-col justify-center xl:px-[240px] xs:px-[15px] xl:mb-[140px] xs:mb-[58px] xl:gap-[40px] xs:gap-[10px]">
             <!-- NEWS SHAREPOINT LIST -->

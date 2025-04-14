@@ -341,7 +341,7 @@
                                 </button>
                             </div>
                             <div>
-                                <a href="" target="_blank"><img src="<?php echo $base_url ?>/Picture1-removebg-preview.png" style="width:150px;"></a>
+                                <a href="https://msutawitawiedu.sharepoint.com/sites/Tawitawi" target="_blank"><img src="<?php echo $base_url ?>/Picture1-removebg-preview.png" style="width:150px;"></a>
                             </div>
                         </div>
                         
