@@ -328,17 +328,23 @@
                                 </p>
                             </div>
                         </a>
-                        <div>
-                            <p class="paragraph xl:p2 xl:block xs:hidden pb-1">
-                                +63 909 982 6063
-                            </p>
-                            <p class="paragraph xl:p2 xl:block xs:hidden">
-                                admissions@msutawi-tawi.edu.ph
-                            </p>
-                            <button class="headings h5 xl:hidden xs:block">
-                                <img src="<?php echo $base_url; ?>images/menuicon.png" />
-                            </button>
+                        <div style="display:inline-flex;">
+                            <div style="display:inline;margin:auto 20px;">
+                                <p class="paragraph xl:p2 xl:block xs:hidden pb-1">
+                                    +63 909 982 6063
+                                </p>
+                                <p class="paragraph xl:p2 xl:block xs:hidden">
+                                    admissions@msutawi-tawi.edu.ph
+                                </p>
+                                <button class="headings h5 xl:hidden xs:block">
+                                    <img src="<?php echo $base_url; ?>images/menuicon.png" />
+                                </button>
+                            </div>
+                            <div>
+                                <a href="" target="_blank"><img src="<?php echo $base_url ?>/Picture1-removebg-preview.png" style="width:150px;"></a>
+                            </div>
                         </div>
+                        
                     </div>
                     <div class="relative z-99">
                         <div class="relative z-99">

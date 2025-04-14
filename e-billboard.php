@@ -91,7 +91,7 @@
         }
 
         /* NEWS */
-        .news-container {
+        /* .news-container {
             width: 100%;
             height: 30vh;
         }
@@ -118,6 +118,15 @@
             gap: 16px;
             animation: moveNewsHorizontal 30s linear infinite;
             min-width: 800px;
+        } */
+        /* NEWS */
+        .news-container h1 {
+            background: #800000;
+            text-align: center;
+            color: #fff;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            padding: 5px;
         }
 
         .news-content-text h2 {
@@ -137,25 +146,35 @@
             text-overflow: ellipsis;
             width: 100%;
         }
-
-        @keyframes moveNewsVertical {
-            0% {
-                transform: translateY(-180vh);
-            }
-
-            100% {
-                transform: translateY(70vh);
-            }
+        /* Container */
+        .marquee {
+            overflow: hidden;
+            position: relative;
         }
 
-        @keyframes moveNewsHorizontal {
-            0% {
-                transform: translateX(2000px);
-            }
+        /* Inner scrolling container */
+        .marquee__inner {
+            display: flex;
+            width: max-content;
+            animation: scroll 40s linear infinite;
+        }
 
-            100% {
-                transform: translateX(-2000px);
-            }
+        /* Items */
+        .news-content {
+            flex: 0 0 auto;
+            margin-right: 40px;
+            white-space: normal;
+            max-width: 900px;
+        }
+
+        /* Animation */
+        @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
         }
     </style>
 </head>
@@ -194,14 +213,18 @@
         <h1>NEWS</h1>
         <div class="content-container" id="news-billboard" data-sharepoint-list="News" data-sort="Created:asc"
             data-filtered-by="DisplayToPublic:1">
-            <script type="text/template" class="content-template">
-        <div class="news-content">
-            <div class="news-content-text">
-                <h2>{{ Title }}</h2>
-                <p>{{ Description }}</p>
+            <div class="marquee">
+                <div class="marquee__inner" aria-hidden="true"></div>
+                    <script type="text/template" class="content-template">
+                        <div class="news-content">
+                            <div class="news-content-text">
+                                <h2>{{ Title }}</h2>
+                                <p>{{ Description }}</p>
+                            </div>
+                        </div>
+                    </script>
+                </div>
             </div>
-        </div>
-    </script>
         </div>
     </div>
     <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -244,6 +267,35 @@
             }, 5000);
 
         });
+        document.addEventListener('DOMContentLoaded', function () {
+        const billboard = document.getElementById('news-billboard');
+
+        // Wait until content is loaded into #news-billboard
+        const observer = new MutationObserver(() => {
+            const items = Array.from(billboard.querySelectorAll('.news-content'));
+
+            if (items.length === 0) return;
+
+            const marquee = document.createElement('div');
+            marquee.classList.add('marquee');
+
+            const inner = document.createElement('div');
+            inner.classList.add('marquee__inner');
+
+            // Append items twice for seamless scroll
+            [...items, ...items].forEach(item => {
+                inner.appendChild(item.cloneNode(true));
+            });
+
+            marquee.appendChild(inner);
+            billboard.innerHTML = ''; // Clear existing
+            billboard.appendChild(marquee);
+
+            observer.disconnect(); // Stop observing once done
+        });
+
+        observer.observe(billboard, { childList: true, subtree: true });
+    });
     </script>
 </body>
 
