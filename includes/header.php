@@ -1,6 +1,7 @@
 <?php $base_url = 'https://dev-tcto.etpbx.com/'; ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -12,8 +13,9 @@
     <link rel="stylesheet" href="<?php echo $base_url; ?>_astro/index.BT5yEVqp.css" />
     <link rel="stylesheet" href="<?php echo $base_url; ?>sharepoint-integration/style.css">
 </head>
+
 <body>
-    
+
     <main>
         <style>
             astro-island,
@@ -341,10 +343,18 @@
                                 </button>
                             </div>
                             <div>
-                                <a href="https://msutawitawiedu.sharepoint.com/sites/Tawitawi" target="_blank"><img src="<?php echo $base_url ?>/Picture1-removebg-preview.png" style="width:150px;"></a>
+                                <a href="https://login.microsoftonline.com/msutawitawiedu.onmicrosoft.com/oauth2/v2.0/authorize?
+                                client_id=53ce01ed-a002-46e0-b92a-3bf7e185dfdf
+                                &response_type=id_token
+                                &redirect_uri=https%3A%2F%2Flocalhost
+                                &scope=openid
+                                &response_mode=form_post
+                                &nonce=12345" target="_blank">
+                                        <img src="<?php echo $base_url ?>/Picture1-removebg-preview.png" style="width:150px;">
+                                    </a>
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="relative z-99">
                         <div class="relative z-99">
@@ -361,10 +371,12 @@
                                                 <a href="<?php echo $base_url; ?>about/campus.php">Brief History</a>
                                             </li>
                                             <li class="py-[15px] px-5">
-                                                <a href="<?php echo $base_url; ?>about/mission-vision.php">Mission/Vision</a>
+                                                <a
+                                                    href="<?php echo $base_url; ?>about/mission-vision.php">Mission/Vision</a>
                                             </li>
                                             <li class="pt-[15px] px-5">
-                                                <a href="<?php echo $base_url; ?>about/university-hymn.php">University Hymn</a>
+                                                <a href="<?php echo $base_url; ?>about/university-hymn.php">University
+                                                    Hymn</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -374,10 +386,12 @@
                                                 width="16" alt="" /></a>
                                         <ul class="mt-[15px] dropdown-menu lvl-one">
                                             <li class="py-[15px] px-5">
-                                                <a href="<?php echo $base_url; ?>admissions/admissions.php">Admission Procedures</a>
+                                                <a href="<?php echo $base_url; ?>admissions/admissions.php">Admission
+                                                    Procedures</a>
                                             </li>
                                             <li class="pt-[15px] px-5">
-                                                <a href="<?php echo $base_url; ?>admissions/scholarship-and-grants.php">Scholarship and
+                                                <a href="<?php echo $base_url; ?>admissions/scholarship-and-grants.php">Scholarship
+                                                    and
                                                     Grants</a>
                                             </li>
                                         </ul>
@@ -396,10 +410,12 @@
                                                     &amp; Arabic Studies</a>
                                             </li>
                                             <li class="py-[15px] px-5">
-                                                <a href="<?php echo $base_url; ?>programs/coed.php">College of Education</a>
+                                                <a href="<?php echo $base_url; ?>programs/coed.php">College of
+                                                    Education</a>
                                             </li>
                                             <li class="py-[15px] px-5">
-                                                <a href="<?php echo $base_url; ?>programs/cof.php">College of Fisheries</a>
+                                                <a href="<?php echo $base_url; ?>programs/cof.php">College of
+                                                    Fisheries</a>
                                             </li>
                                             <li class="py-[15px] px-5">
                                                 <a href="<?php echo $base_url; ?>programs/iict.php">Institute of
@@ -424,10 +440,12 @@
                                                     Offices</a>
                                             </li>
                                             <li class="pt-[15px] px-5">
-                                                <a href="<?php echo $base_url; ?>offices/academic-offices.php">Academic Offices</a>
+                                                <a href="<?php echo $base_url; ?>offices/academic-offices.php">Academic
+                                                    Offices</a>
                                             </li>
                                             <li class="pt-[15px] px-5">
-                                                <a href="<?php echo $base_url; ?>offices/faculty-staff.php">Faculty &amp; Staff</a>
+                                                <a href="<?php echo $base_url; ?>offices/faculty-staff.php">Faculty
+                                                    &amp; Staff</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -440,7 +458,8 @@
                                                 <a href="<?php echo $base_url; ?>publications/articles.php">Articles</a>
                                             </li>
                                             <li class="py-[15px] px-5">
-                                                <a href="<?php echo $base_url; ?>publications/sulimbang.php">Sulimbang</a>
+                                                <a
+                                                    href="<?php echo $base_url; ?>publications/sulimbang.php">Sulimbang</a>
                                             </li>
                                             <li class="py-[15px] px-5">
                                                 <a href="<?php echo $base_url; ?>publications/gazette.php">Gazettes</a>
@@ -449,7 +468,8 @@
                                                 <a href="<?php echo $base_url; ?>bidding.php">Bidding</a>
                                             </li> -->
                                             <li class="pt-[15px] px-5">
-                                                <a href="<?php echo $base_url; ?>publications/annual-reports.php">Annual Reports</a>
+                                                <a href="<?php echo $base_url; ?>publications/annual-reports.php">Annual
+                                                    Reports</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -468,8 +488,8 @@
                                     <form action="/search/" method="post">
                                         <input type="search" autocomplete="off" name="" id="search"
                                             class="bg-transparent border rounded-[20px] 3xl:w-[360px] xl:w-[240px] xs:w-full h-10 pl-12 pr-4 text-center" /><img
-                                            src="<?php echo $base_url; ?>images/search.png" alt="" class="absolute top-[6px] left-3"
-                                            label="search" />
+                                            src="<?php echo $base_url; ?>images/search.png" alt=""
+                                            class="absolute top-[6px] left-3" label="search" />
                                     </form>
                                 </div>
                             </div>
