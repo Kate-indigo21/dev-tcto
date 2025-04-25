@@ -343,15 +343,10 @@
                                 </button>
                             </div>
                             <div>
-                                <a href="https://login.microsoftonline.com/msutawitawiedu.onmicrosoft.com/oauth2/v2.0/authorize?
-                                client_id=53ce01ed-a002-46e0-b92a-3bf7e185dfdf
-                                &response_type=id_token
-                                &redirect_uri=https%3A%2F%2Flocalhost
-                                &scope=openid
-                                &response_mode=form_post
-                                &nonce=12345" target="_blank">
-                                        <img src="<?php echo $base_url ?>/Picture1-removebg-preview.png" style="width:150px;">
-                                    </a>
+                                <a href="https://login.microsoftonline.com/msutawitawiedu.onmicrosoft.com/oauth2/v2.0/authorize?client_id=53ce01ed-a002-46e0-b92a-3bf7e185dfdf&response_type=id_token&redirect_uri=https%3A%2F%2Flocalhost&scope=openid&response_mode=form_post&nonce=12345" target="_blank">
+                                    <img src="<?php echo $base_url ?>/Picture1-removebg-preview.png"
+                                        style="width:150px;">
+                                </a>
                             </div>
                         </div>
 
