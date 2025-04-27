@@ -16,6 +16,7 @@
     <style>
         body {
             font-family: "Atkinson Hyperlegible Next", sans-serif;
+            color: #0a1c37;
             margin: 0px;
             box-sizing: border-box;
             background-color: #0a1c37;
