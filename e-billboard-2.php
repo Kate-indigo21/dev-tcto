@@ -44,11 +44,11 @@
 
         .events-content-text {
             position: absolute;
-            top: 10%;
-            left: 10%;
-            width: 80%;
-            height: 80%;
-            background: rgba(10, 28, 55, 0.8);
+            top: 2%;
+            left: 2%;
+            width: 100%;
+            height: 100%;
+            /* background: rgba(10, 28, 55, 0.8); */
             padding: 30px;
             box-sizing: border-box;
             display: none;
@@ -56,22 +56,24 @@
         }
 
         .events-content-text h2 {
-            font-size: 60px;
+            font-size: 50px;
             margin-bottom: 10px;
         }
 
         .events-content-text span,
         .events-content-text p {
             display: block;
-            font-size: 30px;
+            font-size: 25px;
             margin-top: 5px;
         }
 
         /* Top-left section */
         .text-top-left {
+            background: rgba(10, 28, 55, 0.9);
+            padding:30px 50px;
             position: absolute;
             top: 40px;
-            left: 40px;
+            left: 0px;
             text-align: left;
         }
 
@@ -88,10 +90,13 @@
 
         /* Bottom-right section */
         .text-bottom-left {
+            background: rgba(10, 28, 55, 0.9);
+            padding: 30px 50px;
             position: absolute;
-            bottom: 40px;
-            left: 40px;
-            max-width: 40%;
+            bottom: 5%;
+            right: 2%;
+            margin-right: 2%;
+            max-width: 50%;
             text-align: left;
         }
 
