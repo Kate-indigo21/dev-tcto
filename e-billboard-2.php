@@ -155,7 +155,6 @@
                     $(slide).attr('inert', 'true'); // Apply inert to all slides
                     $(slide).removeAttr('tabindex'); // Remove tabindex to make them unfocusable
                 });
-                $('.slider script.slick-slide').remove();
             });
 
             $('.slider').on('afterChange', function (event, slick, currentSlide) {
@@ -169,7 +168,6 @@
                         $(slide).removeAttr('tabindex'); // Remove tabindex from inactive slides
                     }
                 });
-                $('.slider script.slick-slide').remove();
             });
 
             function initializeSlickSlider() {
