@@ -165,7 +165,7 @@
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     autoplay: true,
-                    autoplaySpeed: 5000, // 2s blank + 3s text
+                    autoplaySpeed: 8000, // 2s blank + 3s text
                     arrows: false,
                     dots: false,
                     adaptiveHeight: true,
