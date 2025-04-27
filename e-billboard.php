@@ -183,13 +183,13 @@
     <div class="container">
         <!-- Left Column: Video -->
         <div class="video-container">
-            <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Kb-4JL1ZIpM?autoplay=1&mute=1&loop=1"
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Kb-4JL1ZIpM?autoplay=1&mute=1&loop=1"
                 frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-            </iframe> -->
-            <video autoplay loop muted playsinline width="100%">
+            </iframe>
+            <!-- <video autoplay loop muted playsinline width="100%">
                 <source src="<?php echo $base_url; ?>videos/ebillboard-video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
-            </video>
+            </video> -->
         </div>
         <!-- Right Column: Events -->
         <div class="events-container">
