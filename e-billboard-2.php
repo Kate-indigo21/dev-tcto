@@ -69,7 +69,7 @@
 
         /* Top-left section */
         .text-top-left {
-            background: rgba(10, 28, 55, 0.9);
+            background: rgba(10, 28, 55, 0.7);
             padding:30px 50px;
             position: absolute;
             top: 40px;
@@ -78,7 +78,7 @@
         }
 
         .text-top-left h2 {
-            font-size: 60px;
+            font-size: 50px;
             margin: 0 0 10px 0;
         }
 
@@ -90,13 +90,13 @@
 
         /* Bottom-right section */
         .text-bottom-left {
-            background: rgba(10, 28, 55, 0.9);
+            background: rgba(10, 28, 55, 0.7);
             padding: 30px 50px;
             position: absolute;
             bottom: 5%;
             right: 2%;
             margin-right: 2%;
-            max-width: 50%;
+            max-width: 55%;
             text-align: left;
         }
 
