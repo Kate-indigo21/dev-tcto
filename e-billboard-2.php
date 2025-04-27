@@ -161,6 +161,11 @@
                     setTimeout(() => {
                         $textOverlay.fadeIn(600);
                     }, 2000);
+
+                    $(slick.$slides).each(function () {
+                        $(this).attr('aria-hidden', 'false');  // Remove the aria-hidden attribute
+                        $(this).attr('inert', '');  // Add the inert attribute instead
+                    });
                 });
 
                 $('.slider').slick({
