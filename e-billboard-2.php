@@ -228,6 +228,11 @@
                             loadedImages++;
                             if (loadedImages === totalSlides) {
                                 initializeSlickSlider();
+                                $('.slider').on('init', function(event, slick){
+    if ($(slick.$slides[0]).is('script')) {
+        slick.slickRemove(0);
+    }
+});
                             }
                         };
 
@@ -236,6 +241,11 @@
                             loadedImages++;
                             if (loadedImages === totalSlides) {
                                 initializeSlickSlider();
+                                $('.slider').on('init', function(event, slick){
+    if ($(slick.$slides[0]).is('script')) {
+        slick.slickRemove(0);
+    }
+});
                             }
                         };
 
