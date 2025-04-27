@@ -148,24 +148,25 @@
     <script>
         jQuery(document).ready(function ($) {
             $('.slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-    $(slick.$slides).each(function() {
-        // Disable all slides from being interactive before transition
-        $(this).attr('inert', '');  // Ensure inert is active
-        $(this).attr('aria-hidden', 'false');  // Remove aria-hidden if added
-    });
-});
+                // Make all slides inert before transition
+                $(slick.$slides).each(function (index, slide) {
+                    $(slide).attr('inert', 'true'); // Apply inert to all slides
+                    $(slide).removeAttr('tabindex'); // Remove tabindex to make them unfocusable
+                });
+            });
 
-$('.slider').on('afterChange', function (event, slick, currentSlide) {
-    $(slick.$slides).each(function(index, slide) {
-        if (index === currentSlide) {
-            // Ensure the current slide is focusable
-            $(slide).removeAttr('inert');
-        } else {
-            // Add inert to other slides to make them non-interactive
-            $(slide).attr('inert', '');
-        }
-    });
-});
+            $('.slider').on('afterChange', function (event, slick, currentSlide) {
+                // Remove inert and tabindex from the active slide
+                $(slick.$slides).each(function (index, slide) {
+                    if (index === currentSlide) {
+                        $(slide).removeAttr('inert'); // Remove inert from active slide
+                        $(slide).attr('tabindex', '0'); // Make the active slide focusable
+                    } else {
+                        $(slide).attr('inert', 'true'); // Ensure inactive slides are inert
+                        $(slide).removeAttr('tabindex'); // Remove tabindex from inactive slides
+                    }
+                });
+            });
 
             function initializeSlickSlider() {
                 $('.slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
