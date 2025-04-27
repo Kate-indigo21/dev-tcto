@@ -148,7 +148,22 @@
     <script src="<?php echo $base_url; ?>sharepoint-integration/sharepoint-script.js"></script>
     <script>
         jQuery(document).ready(function ($) {
-            $('.slider script.slick-slide').remove();
+            const observer = new MutationObserver(function(mutationsList, observer) {
+        mutationsList.forEach(function(mutation) {
+            // If a script tag with the 'slick-slide' class is added, remove it
+            mutation.addedNodes.forEach(function(node) {
+                if (node.nodeName === 'SCRIPT' && $(node).hasClass('slick-slide')) {
+                    $(node).remove();
+                }
+            });
+        });
+    });
+
+    // Start observing changes in the slider
+    observer.observe(document.querySelector('.slider'), {
+        childList: true, // Look for child elements added or removed
+        subtree: true     // Observe all descendants
+    });
             $('.slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
                 // Make all slides inert before transition
                 $(slick.$slides).each(function (index, slide) {
