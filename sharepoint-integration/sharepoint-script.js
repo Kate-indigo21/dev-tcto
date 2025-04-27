@@ -565,6 +565,8 @@ function closePopup(popupTarget = "popup") {
 }
 
 function removeRenderTemplate(container){
+    console.log(container);
+    container = $(container);
     container.find('script[type="text/template"]').remove();
     // jQuery('script[type="text/template"]').remove();
     // container.querySelectorAll('script[type="text/template"]').forEach(script => script.remove());

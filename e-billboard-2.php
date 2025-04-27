@@ -169,6 +169,8 @@
                     arrows: false,
                     dots: false,
                     adaptiveHeight: true,
+                    fade: true,             // <<< added this line
+                    cssEase: 'linear',      // <<< smoother dissolve effect
                     pauseOnHover: false,
                     pauseOnFocus: false
                 });
