@@ -70,7 +70,7 @@
         /* Top-left section */
         .text-top-left {
             background: rgba(10, 28, 55, 0.7);
-            padding:30px 50px;
+            padding: 30px 50px;
             position: absolute;
             top: 40px;
             left: 0px;
@@ -109,11 +109,13 @@
             display: -webkit-box;
             text-overflow: ellipsis;
         }
+
         .logo-top-right {
             position: absolute;
             top: 40px;
             right: 40px;
-            width: 150px; /* Adjust as needed */
+            width: 150px;
+            /* Adjust as needed */
             height: auto;
             z-index: 10;
         }
@@ -178,11 +180,42 @@
 
             // Wait for SharePoint content to load
             const checkExist = setInterval(function () {
-                if ($('.slider .events-content').length) {
+                const $slides = $('.slider .events-content');
+
+                if ($slides.length) {
                     clearInterval(checkExist);
-                    initializeSlickSlider();
+
+                    let preloadImages = [];
+                    let totalSlides = $slides.length;
+                    let loadedImages = 0;
+
+                    $slides.each(function (index) {
+                        const backgroundUrl = $(this).css('background-image')
+                            .replace(/^url\(["']?/, '')
+                            .replace(/["']?\)$/, '');
+
+                        const img = new Image();
+                        img.src = backgroundUrl;
+
+                        img.onload = function () {
+                            loadedImages++;
+                            if (loadedImages === totalSlides) {
+                                initializeSlickSlider();
+                            }
+                        };
+
+                        img.onerror = function () {
+                            console.error('Failed to preload:', backgroundUrl);
+                            loadedImages++;
+                            if (loadedImages === totalSlides) {
+                                initializeSlickSlider();
+                            }
+                        };
+
+                        preloadImages.push(img);
+                    });
                 }
-            }, 500);
+            }, 300);
         });
     </script>
 </body>
