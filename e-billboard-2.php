@@ -148,6 +148,7 @@
     <script src="<?php echo $base_url; ?>sharepoint-integration/sharepoint-script.js"></script>
     <script>
         jQuery(document).ready(function ($) {
+            $('.slider script.slick-slide').remove();
             $('.slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
                 // Make all slides inert before transition
                 $(slick.$slides).each(function (index, slide) {
@@ -228,11 +229,6 @@
                             loadedImages++;
                             if (loadedImages === totalSlides) {
                                 initializeSlickSlider();
-                                $('.slider').on('init', function(event, slick){
-    if ($(slick.$slides[0]).is('script')) {
-        slick.slickRemove(0);
-    }
-});
                             }
                         };
 
@@ -241,11 +237,6 @@
                             loadedImages++;
                             if (loadedImages === totalSlides) {
                                 initializeSlickSlider();
-                                $('.slider').on('init', function(event, slick){
-    if ($(slick.$slides[0]).is('script')) {
-        slick.slickRemove(0);
-    }
-});
                             }
                         };
 
