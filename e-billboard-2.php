@@ -147,6 +147,26 @@
     <script src="<?php echo $base_url; ?>sharepoint-integration/sharepoint-script.js"></script>
     <script>
         jQuery(document).ready(function ($) {
+            $('.slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+    $(slick.$slides).each(function() {
+        // Disable all slides from being interactive before transition
+        $(this).attr('inert', '');  // Ensure inert is active
+        $(this).attr('aria-hidden', 'false');  // Remove aria-hidden if added
+    });
+});
+
+$('.slider').on('afterChange', function (event, slick, currentSlide) {
+    $(slick.$slides).each(function(index, slide) {
+        if (index === currentSlide) {
+            // Ensure the current slide is focusable
+            $(slide).removeAttr('inert');
+        } else {
+            // Add inert to other slides to make them non-interactive
+            $(slide).attr('inert', '');
+        }
+    });
+});
+
             function initializeSlickSlider() {
                 $('.slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
                     // Hide text from all slides before transition
